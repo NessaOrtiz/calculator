@@ -1,53 +1,24 @@
 // import functions and grab DOM elements
 
-// initialize state
+import { add, subtract, multiply, divide } from './utilities.js'
 
-// set event listeners to update state and DOM
+function getNumber(input) {
+    return Number(input.value);
+}
 
-const addInput = document.getElementById('add-input');
-const addIntoInput = document.getElementById('add-into');
-const addButton = document.getElementById('add-button');
-const addTotal = document.getElementById('add-total');
+function initOperator(firstInputId, secondInputId, buttonId, solutionId, calculation) {
+    const input1 = document.getElementById(firstInputId);
+    const input2 = document.getElementById(secondInputId);
+    const button = document.getElementById(buttonId);
+    const display = document.getElementById(solutionId);
 
-// console.log(addInput, addIntoInput, addButton, addTotal, sumDisplay)
-
-addButton.addEventListener('click', () =>{
-    const solution = Number(addInput.value) + Number(addIntoInput.value);
-addTotal.textContent = solution;
-// console.log(solution);
+button.addEventListener('click', () =>{
+    display.textContent = calculation(getNumber(input1), getNumber(input2));
 });
+}
 
+initOperator('add-input', 'add-into', 'add-button', 'add-total', add);
+initOperator('sub-input', 'sub-into', 'sub-button', 'sub-total', subtract);
+initOperator('mult-input', 'mult-into', 'mult-button', 'mult-total', multiply);
+initOperator('div-input', 'div-into', 'div-button', 'div-total', divide);
 
-const subInput = document.getElementById('sub-input');
-const subIntoInput = document.getElementById('sub-into');
-const subButton = document.getElementById('sub-button');
-const subTotal = document.getElementById('sub-total');
-
-subButton.addEventListener('click', () =>{
-    const subSolution = Number(subInput.value) - Number(subIntoInput.value);
-subTotal.textContent = subSolution;
-// console.log(solution);
-});
-
-
-const multInput = document.getElementById('mult-input');
-const multIntoInput = document.getElementById('mult-into');
-const multButton = document.getElementById('mult-button');
-const multTotal = document.getElementById('mult-total');
-
-multButton.addEventListener('click', () =>{
-    const multSolution = Number(multInput.value) * Number(multIntoInput.value);
-multTotal.textContent = multSolution;
-// console.log(solution);
-});
-
-const divInput = document.getElementById('div-input');
-const divIntoInput = document.getElementById('div-into');
-const divButton = document.getElementById('div-button');
-const divTotal = document.getElementById('div-total');
-
-divButton.addEventListener('click', () =>{
-    const divSolution = Number(divInput.value) / Number(divIntoInput.value);
-divTotal.textContent = divSolution;
-// console.log(solution);
-});

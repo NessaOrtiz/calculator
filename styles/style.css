@@ -31,18 +31,13 @@ main {
 }
 
 section {
-    background-color: var(--color5);
-    width: 1000px;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
-    margin-top: var(--gutter);
-    margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
+    background-color: rgb(219, 255, 219);
+}
+
+button {
+    color: rgb(0, 0, 0);
+    background-color: rgb(109, 207, 109);
+    margin-left: 30px;
 }
 
 header {
@@ -64,6 +59,9 @@ footer {
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 .gutter-right {
@@ -115,5 +113,5 @@ footer {
     80% {
         transform: rotate3d(10, 10, 10, 50deg) scale(1);
     }
-
+    
   }
